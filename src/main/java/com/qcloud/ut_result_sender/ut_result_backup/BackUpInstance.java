@@ -50,12 +50,12 @@ public class BackUpInstance {
 
     public String backUpXml(File xmlFile) {
         String key = backupFolder + xmlFile.getName();
-        //try {
-        //    cosclient.putObject(bucketName, key, xmlFile);
-        //} catch (Exception e) {
-        //    log.error("backup xmlfile {} occur a exception {}", key, e.toString());
-        //    return null;
-        //}
+        try {
+            cosclient.putObject(bucketName, key, xmlFile);
+        } catch (Exception e) {
+            log.error("backup xmlfile {} occur a exception {}", key, e.toString());
+            return null;
+        }
 
         String xmlLink = String.format("http://%s.cos.%s.myqcloud.com/%s", bucketName, region, key);
         return xmlLink;
