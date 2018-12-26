@@ -217,8 +217,8 @@ public class TaskExecutor {
     }
 
     public void run() {
-        scanLocalFolder();
-        buildEmailContent();
+        //scanLocalFolder();
+        //buildEmailContent();
         sendEmail();
     }
 }
